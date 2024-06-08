@@ -4,7 +4,9 @@
     "license": "MIT",
     "minimum-stability": "dev",
     "autoload": {
-        "psr-0": {"JuanchoSL\\APITemplateInstaller": "src/"}
+        "psr-4": {
+            "JuanchoSL\\APITemplateInstaller\\": "src/"
+        }
     },
     "extra": {
         "class": "JuanchoSL\\APITemplateInstaller\\MiddlewareInstallerPlugin"
