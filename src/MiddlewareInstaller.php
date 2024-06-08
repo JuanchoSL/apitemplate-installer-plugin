@@ -7,6 +7,7 @@ use Composer\Installer\LibraryInstaller;
 
 class MiddlewareInstaller extends LibraryInstaller
 {
+    protected string $plugin_type = 'juanchosl-apitemplate';
     /**
      * @inheritDoc
      */
@@ -14,14 +15,14 @@ class MiddlewareInstaller extends LibraryInstaller
     {
         $prefix = substr($package->getPrettyName(), 0, 22);
         if ('juanchosl/apitemplate-' !== $prefix) {
-            throw new \InvalidArgumentException(
-                'Unable to install ' . $package->getPrettyName()
-                . ' should always start their package name with '
-                . '"juanchosl/apitemplate-"'
-            );
+            throw new \InvalidArgumentException("Unable to install " . $package->getPrettyName() . " should always start their package name with {$this->plugin_type}-");
         }
 
-        return 'src/Context/Infrastructure/Middlewares';// . substr($package->getPrettyName(), 22);
+        $directories = explode('-', substr($package->getPrettyName(), strlen($this->plugin_type . '-')));
+        foreach ($directories as $index => $directory) {
+            $directories[$index] = ucfirst($directory);
+        }
+        return 'src/Context/Infrastructure/' . implode('/', $directories);
     }
 
     /**
@@ -29,6 +30,6 @@ class MiddlewareInstaller extends LibraryInstaller
      */
     public function supports($packageType)
     {
-        return 'juanchosl-apitemplate' === $packageType;
+        return $this->plugin_type === $packageType;
     }
 }
