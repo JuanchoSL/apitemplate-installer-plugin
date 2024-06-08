@@ -21,7 +21,7 @@ class MiddlewareInstaller extends LibraryInstaller
             );
         }
 
-        return 'src/Context/Infrastructure/' . substr($package->getPrettyName(), 22);
+        return 'src/Context/Infrastructure/Middlewares';// . substr($package->getPrettyName(), 22);
     }
 
     /**
