@@ -12,7 +12,7 @@ class MiddlewareInstaller extends LibraryInstaller
      */
     public function getInstallPath(PackageInterface $package)
     {
-        $prefix = substr($package->getPrettyName(), 0, 23);
+        $prefix = substr($package->getPrettyName(), 0, 22);
         if ('juanchosl/apitemplate-' !== $prefix) {
             throw new \InvalidArgumentException(
                 'Unable to install template, phpdocumentor templates '
@@ -21,7 +21,7 @@ class MiddlewareInstaller extends LibraryInstaller
             );
         }
 
-        return 'src/Context/Infrastructure/'.substr($package->getPrettyName(), 23);
+        return 'src/Context/Infrastructure/'.substr($package->getPrettyName(), 22);
     }
 
     /**
