@@ -1,6 +1,6 @@
 <?php
 
-namespace JuanchoSL\APITemplate\Installer;
+namespace JuanchoSL\APITemplateInstaller;
 
 use Composer\Composer;
 use Composer\IO\IOInterface;
