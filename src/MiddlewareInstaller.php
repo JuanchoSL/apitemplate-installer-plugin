@@ -15,13 +15,13 @@ class MiddlewareInstaller extends LibraryInstaller
         $prefix = substr($package->getPrettyName(), 0, 22);
         if ('juanchosl/apitemplate-' !== $prefix) {
             throw new \InvalidArgumentException(
-                'Unable to install template, phpdocumentor templates '
-                .'should always start their package name with '
-                .'"juanchosl/apitemplate-"'
+                'Unable to install ' . $package->getPrettyName()
+                . ' should always start their package name with '
+                . '"juanchosl/apitemplate-"'
             );
         }
 
-        return 'src/Context/Infrastructure/'.substr($package->getPrettyName(), 22);
+        return 'src/Context/Infrastructure/' . substr($package->getPrettyName(), 22);
     }
 
     /**
