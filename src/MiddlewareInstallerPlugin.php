@@ -1,11 +1,10 @@
 <?php
 
-namespace APITemplate\Composer;
+namespace JuanchoSL\APITemplate\Installer;
 
 use Composer\Composer;
 use Composer\IO\IOInterface;
 use Composer\Plugin\PluginInterface;
-use APITemplate\Composer\MiddlewareInstaller;
 
 class MiddlewareInstallerPlugin implements PluginInterface
 {

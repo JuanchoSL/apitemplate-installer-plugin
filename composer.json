@@ -4,10 +4,10 @@
     "license": "MIT",
     "minimum-stability": "dev",
     "autoload": {
-        "psr-0": {"APITemplate\\Composer": "src/"}
+        "psr-4": {"JuanchoSL\\APITemplate\\Installer": "src/"}
     },
     "extra": {
-        "class": "APITemplate\\Composer\\MiddlewareInstallerPlugin"
+        "class": "JuanchoSL\\APITemplate\\Installer\\MiddlewareInstallerPlugin"
     },
     "require": {
         "composer-plugin-api": "2.3.0"

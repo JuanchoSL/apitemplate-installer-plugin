@@ -1,6 +1,6 @@
 <?php
 
-namespace APITemplate\Composer;
+namespace JuanchoSL\APITemplate\Installer;
 
 use Composer\Package\PackageInterface;
 use Composer\Installer\LibraryInstaller;
